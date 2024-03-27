@@ -1,0 +1,22 @@
+[package]
+name = "rwd_contract"
+version = "0.0.1"
+
+# See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
+
+[dependencies]
+starknet = "2.1.0"
+snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry.git", tag = "v0.4.1" }
+
+[[target.starknet-contract]]
+# Enable Sierra codegen.
+sierra = true
+allowed-libfuncs-list.name = "experimental"
+
+# Enable CASM codegen.
+casm = true
+
+[tool.sncast]
+# cat ~/.starknet_accounts/starknet_open_zeppelin_accounts.json
+account = "0x3"
+url = "https://9ab82b481e61ce0f4bb73ee725d9490c-appchain.web3mq.com"
